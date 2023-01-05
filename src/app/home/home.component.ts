@@ -11,7 +11,7 @@ SwiperCore.use([Keyboard, Pagination, Navigation, Virtual]);
   styleUrls: ['./home.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent {
 
   slides$ = new BehaviorSubject<string[]>(['']);
 
@@ -20,5 +20,6 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {
     this.slides$.next(
       Array.from({ length: 600 }).map((el, index) => `Slide ${index + 1}`)
-    )}
+    );
+  }
 }
