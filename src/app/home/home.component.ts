@@ -1,11 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
+import SwiperCore, { Keyboard, Pagination, Navigation, Virtual } from 'swiper';
+
+SwiperCore.use([Keyboard, Pagination, Navigation, Virtual]);
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
 
+  slides$ = new BehaviorSubject<string[]>(['']);
+
+  constructor() {}
+
+  ngOnInit(): void {
+    this.slides$.next(
+      Array.from({ length: 600 }).map((el, index) => `Slide ${index + 1}`)
+    )}
 }

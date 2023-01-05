@@ -1,90 +1,21 @@
-
-<!-- ##### Hero Area Start ##### -->
-<section class="hero-area">
-    <div class="hero-slides owl-carousel">
-        <!-- Single Hero Slide -->
-        <div class="single-hero-slide bg-img bg-overlay" style="background-image: url(assets/img/bg-img/bg-.jpg);">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center justify-content-end">
-                    <div class="col-12 col-lg-7">
-                        <!-- Slides Content -->
-                        <div class="hero-slides-content">
-                            <h5 class="date" data-animation="fadeInUp" data-delay="100ms">Recognise</h5>
-                            <h3 data-animation="fadeInUp" data-delay="300ms">We are a doctrinal and dynamic household of faith with a passion to:</h3>
-                            <h2 data-animation="fadeInUp" data-delay="500ms">Mature saints in CHRIST</h2>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Event Button -->
-            <div class="next-event-btn" data-animation="bounceInDown" data-delay="900ms">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 text-right">
-                            <a href="#" class="btn faith-btn active">Pretoria Sunday Service: 07:30 AM</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Single Hero Slide -->
-        <div class="single-hero-slide bg-img bg-overlay" style="background-image: url(assets/img/bg-img/bg-three.jpg);">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center justify-content-end">
-                    <div class="col-12 col-lg-7">
-                        <!-- Slides Content -->
-                        <div class="hero-slides-content">
-                            <h5 class="date" data-animation="fadeInUp" data-delay="100ms">Raise</h5>
-                            
-                            <h2 data-animation="fadeInUp" data-delay="500ms">Mature leaders in CHRIST</h2>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Event Button -->
-            <div class="next-event-btn" data-animation="bounceInDown" data-delay="900ms">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 text-right">
-                            <a href="#" class="btn faith-btn active">Duduza Sunday Service: 10:00 AM</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Single Hero Slide -->
-        <div class="single-hero-slide bg-img bg-overlay" style="background-image: url(assets/img/bg-img/bg-six.jpg);">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12 col-lg-7">
-                        <!-- Slides Content -->
-                        <div class="hero-slides-content">
-                            <h5 class="date" data-animation="fadeInUp" data-delay="100ms">Release</h5>
-                            
-                            <h2 data-animation="fadeInUp" data-delay="500ms">Mature churches and ministries in CHRIST</h2>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Event Button -->
-            <div class="next-event-btn" data-animation="bounceInDown" data-delay="900ms">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 text-right">
-                            <a href="#" class="btn faith-btn active">Joburg Sunday Service: 11:30 AM</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<swiper
+  [slidesPerView]="1"
+  [spaceBetween]="50"
+  [navigation]="true"
+  [pagination]="{ type: 'fraction' }"
+  [centeredSlides]="true"
+  [keyboard]="{
+    enabled: true
+  }"
+  [virtual]="true"
+  class="my-swiper"
+>
+  <ng-template swiperSlide *ngFor="let slide of slides$ | async; index as i">
+    <div class="swiper-slide-container">
+      {{ slide }}
     </div>
-</section>
-<!-- ##### Hero Area End ##### -->
+  </ng-template>
+</swiper>
 
 <!-- ##### About Area Start ##### -->
 <section class="faith-about-area section-padding-100-0">
