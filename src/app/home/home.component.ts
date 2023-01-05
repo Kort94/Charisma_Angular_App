@@ -15,11 +15,11 @@ export class HomeComponent {
 
   slides$ = new BehaviorSubject<string[]>(['']);
 
-  constructor() {}
+  
 
   ngOnInit(): void {
     this.slides$.next(
-      Array.from({ length: 600 }).map((el, index) => `Slide ${index + 1}`)
+      Array.from({ length: 3 }).map((el, index) => `Slide ${index + 1}`)
     );
   }
 }
