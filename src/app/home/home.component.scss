@@ -3,7 +3,9 @@
 @import 'swiper/scss/pagination';
 
 .my-swiper {
-    height: 100px;
+    width: 100%;
+    height: 600px;
+    position: relative;
 }
 
 .swiper-slide-container {
